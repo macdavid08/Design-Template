@@ -1,59 +1,53 @@
 $(document).ready (()=> {
 
+  
+
     $(".send").click(function (){
         
-
-        validatName()
+        validateName()
         validatMail()
         validatNumb()
         validatPassword()
-
-        $("#name").val("")
-        $("#mail").val("")
-        $("#phone").val("")
-        $("#password").val("")
-
-        
-        
-
-        // $(".success").text("Submission successful").addClass("submit")
-
-
        
+    
     })
 
-    
+  
 
-    let validatName = ()=> {
 
-        if(!nameChk()){
+    let validateName = ()=>{
+        
+        if($("#name").val() == ''){
             $(".txt").text(" Space can't be empty")
-            return
-        }else{
-           
+            $(".txt").addClass("style")
+            $("#name").css("border", "1px solid red")
+            }else{
+                $("#name").val("")
         }
-       
-
     }
+
 
     let validatMail = ()=> {
 
-        if(!emailChk()){
-            $(".mail-txt").text("Space can't be empty")
-        }else{
-            return
-        }
        
+        if($("#mail").val() == ''){
+            $(".mail-txt").text(" Space can't be empty")
+            $(".mail-txt").addClass("style")
+            $("#mail").css("border", "1px solid red")
+            }else{
+                $("#mail").val("")
+        }
 
     }
 
     let validatNumb = ()=> {
 
-        if(!phoneChk()){
-            $(".pNumb").text("Space can't be empty")
-
-        }else{
-            return
+        if($("#phone").val() == ''){
+            $(".pNumb").text(" Space can't be empty")
+            $(".pNumb").addClass("style")
+            $("#phone").css("border", "1px solid red")
+            }else{
+                $("#phone").val("")
         }
        
 
@@ -61,11 +55,12 @@ $(document).ready (()=> {
 
     let validatPassword = ()=> {
 
-        if(!passwordChk()){
-            $(".txt1").text("Space can't be empty ")
-
-        }else{
-            return
+        if($("#password").val() == ''){
+            $(".txt1").text(" Space can't be empty")
+            $(".txt1").addClass("style")
+            $("#password").css("border", "1px solid red")
+            }else{
+                $("#password").val("")
         }
        
 
@@ -91,8 +86,13 @@ $(document).ready (()=> {
         }else {
             $("#name").css("border", "1px solid green")
             $(".txt").remove("")
+            $(".send").css("background","rgb(2, 2, 107)")
+
      
         }
+
+       
+
 
     
     }
